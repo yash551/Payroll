@@ -1,0 +1,48 @@
+﻿<!--
+    Name: Yash Gadhiya
+    Title: Incorporeal Payroll
+    last modified: Oct 12, 2020
+    Course: NETD 3201
+    -->
+<Window x:Class="Payroll.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Payroll"
+        mc:Ignorable="d"
+        Title="Incorporeal Payroll" Height="393" Width="667" WindowStartupLocation="CenterScreen" Icon="/IncIncLogo.png" HorizontalAlignment="Center" VerticalAlignment="Top" ResizeMode="NoResize">
+
+    <Grid Margin="5,5,5,5" HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--Row 0 controls-->
+        <Label Name="lblWorkerName" Content="Worker's  _Name:" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Top" Height="35" Width="96" TabIndex="1" AutomationProperties.AccessKey="N" Target="{Binding ElementName=txtWorkerName}"/>
+        <TextBox x:Name="txtWorkerName" HorizontalAlignment="Left" Margin="10" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" TabIndex="4" ToolTip="Name of the worker"/>
+        <Label Name="lblNameError" Content="" Grid.Column="1" Margin="10,56,10,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" IsEnabled="False" VerticalContentAlignment="Center"/>
+
+        <!--Row 1 controls-->
+        <Label Name="lblPiecesProduced" Content="_Messages Sent" HorizontalAlignment="Right" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.563,2.163" Height="36" Width="106" Grid.Row="1" TabIndex="2" AutomationProperties.AccessKey="M" Target="{Binding ElementName=txtMessageCount}"/>
+        <TextBox x:Name="txtMessageCount" HorizontalAlignment="Left" Margin="10" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Row="1" Grid.Column="1" TabIndex="5" ToolTip="Number of the messages sent by the worker"/>
+        <Label Name="lblMessageError" Content="" Grid.Column="1" Margin="10,56,10,0" VerticalAlignment="Top" Grid.Row="1" HorizontalContentAlignment="Left" IsEnabled="False" VerticalContentAlignment="Center"/>
+
+        <!--Row 2 controls-->
+        <Label Name="TotalPay" Content="Total Pay:" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="26" Width="86" Grid.Row="2" TabIndex="3"/>
+        <TextBox x:Name="txtPay" HorizontalAlignment="Left" Margin="10" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.Row="2" Grid.Column="1" TabIndex="9" ToolTip="TOtal Pay" IsTabStop="False"/>
+
+        <!--Row 3 controls-->
+        <Button x:Name="btnCalculate" Content="_Calculate Pay" Margin="23,0,153,0" VerticalAlignment="Center" Height="24" Width="130" Grid.Row="3" VerticalContentAlignment="Stretch" Click="btnCalculate_Click" TabIndex="6" AutomationProperties.AccessKey="c" Cursor="" ToolTip="To calculte the total pay of the worker" IsDefault="True" HorizontalAlignment="Center"/>
+        <Button x:Name="btnClear" Content="C_lear Fields" Margin="242,31,242,0" VerticalAlignment="Top" Height="25" Width="128" Click="Button_Click" Grid.Row="3" VerticalContentAlignment="Stretch" TabIndex="7" AutomationProperties.AccessKey="l" ToolTip="To clean all the fields" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+        <Button x:Name="btnSummary" Content="_Summary" Grid.Column="1" HorizontalAlignment="Center" Margin="153,0,0,0" VerticalAlignment="Center" Height="24" Width="130" Grid.Row="3" ToolTip="View the summary" Click="btnSummary_Clicked" TabIndex="8"/>
+
+    </Grid>
+</Window>
